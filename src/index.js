@@ -1,23 +1,23 @@
 exports.min = function min(array) {
-    if (array.length === 0) return 0;
-    array.sort(function(a, b) {
-        return a - b;
+    if (array === undefined || array.length === 0) return 0;
+    let n = array[0];
+    array.forEach(function(a) {
+        if (a < n) n = a;
     });
-
-    return array[0];
+    return n;
 };
 
 exports.max = function max(array) {
-    if (array.length === 0) return 0;
-    array.sort(function(a, b) {
-        return b - a;
+    if (array === undefined || array.length === 0) return 0;
+    let n = array[0];
+    array.forEach(function(a) {
+        if (a > n) n = a;
     });
-
-    return array[0];
+    return n;
 };
 
 exports.avg = function avg(array) {
-    if (array.length === 0) return 0;
+    if (array === undefined || array.length === 0) return 0;
     let n = 0;
     array.forEach(function(a) {
         return (n = n + a);
