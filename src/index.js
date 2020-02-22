@@ -1,12 +1,27 @@
+exports.min = function min(array) {
+    if (array.length === 0) return 0;
+    array.sort(function(a, b) {
+        return a - b;
+    });
 
-exports.min = function min (array) {
-  return 0;
-}
+    return array[0];
+};
 
-exports.max = function max (array) {
-  return 0;
-}
+exports.max = function max(array) {
+    if (array.length === 0) return 0;
+    array.sort(function(a, b) {
+        return b - a;
+    });
 
-exports.avg = function avg (array) {
-  return 0;
-}
+    return array[0];
+};
+
+exports.avg = function avg(array) {
+    if (array.length === 0) return 0;
+    let n = 0;
+    array.forEach(function(a) {
+        return (n = n + a);
+    });
+
+    return n / array.length;
+};
